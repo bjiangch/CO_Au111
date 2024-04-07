@@ -3,6 +3,7 @@
 With a trained model, users can employ the model to obtain the energies and atomic force vectors of configurations. Furthermore, the models can be interfaced into the MD package for atomic simulation.
 
 Parameters trained for the neutral state PES, the anionic state PES and the coupling between the two states are in “/para-neutral”, “/para-anion” and “/para-coupling”, respectively. And you can change these paths in mod_*.f90. In each parameter dir, you can see “input”, “cell”, “atom”, “W_[element name]1” and “weight_wave_[element]”. “inputs” contains parameters used to train the neural network (NN) potential. “cell” contains the lattice parameter of the system. “atom” contains the atom names with the order of the input geometry. “W_[element name]1” and “weight_wave_[element]” contain parameters of the neural network structure.
+
 #The Fortran interface:
 At the beginning, users need to compile the Fortran files to obtain an executable file. Then users need to call the subroutine ‘init_pes’ to do some initializations. Then you can pass the coordinates of configurations by calling the subroutine. “EANN_out(table, start_force, coor, y, force)”
 
